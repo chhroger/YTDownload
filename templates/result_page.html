@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{%block content%}
+<h1>{{search}}</h1>
+{%for item in range(0,21)%}
+{%if '{}'.format(item) in videos%}
+<p>{{videos.get('{}'.format(item))['title']}}</p>
+<p>{{videos.get('{}'.format(item))['link']}}</p>
+<p>{{videos.get('{}'.format(item))['image']}}</p>
+<p>{{videos.get('{}'.format(item))['time']}}</p>
+<p>-----------------------------------------</p>
+{%endif%}
+{%endfor%}
+{%endblock%}
