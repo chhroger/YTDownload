@@ -3,11 +3,20 @@
 <h1>{{search}}</h1>
 {%for item in range(0,21)%}
 {%if '{}'.format(item) in videos%}
-<p>{{videos.get('{}'.format(item))['title']}}</p>
-<p>{{videos.get('{}'.format(item))['link']}}</p>
-<p>{{videos.get('{}'.format(item))['image']}}</p>
-<p>{{videos.get('{}'.format(item))['time']}}</p>
-<p>-----------------------------------------</p>
+<div class="card" style="width: 20rem;">
+    <a href="{{videos.get('{}'.format(item))['link']}}">
+        <h4 class="card-title">{{videos.get('{}'.format(item))['title']}}</h4>
+    </a>
+    <div class="card-block">
+        <a href="{{videos.get('{}'.format(item))['link']}}">
+            <img class="card-img-top"
+                 src="{{videos.get('{}'.format(item))['image']}}"
+                 alt="Card image cap">
+        </a>
+        <p class="card-text">{{videos.get('{}'.format(item))['time']}}</p>
+    </div>
+</div>
+
 {%endif%}
 {%endfor%}
 {%endblock%}
